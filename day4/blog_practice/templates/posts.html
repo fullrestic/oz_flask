@@ -65,41 +65,38 @@
 
         function loadPosts() {
             axios.get('/posts')
-                    .then(function (response) {
-                        const posts = response.data;
-                        const postsList = document.getElementById("postsList");
-                        postsList.innerHTML = "";
+                .then(function (response) {
+                    const posts = response.data;
+                    const postsList = document.getElementById('postsList');
+                    postsList.innerHTML = '';
 
-                        posts.reverse().forEach((post) => {
-                            const listItem = document.createElement("li");
-                            listItem.innerHTML = `
-                                <h3>ID: ${post.id}</h3>
-                                <h3>Title: ${post.title}</h3>
-                                <p>Content: ${post.content}</p>
-                                <button onclick="deletePost(${post.id})">Delete</button>
-                                <button onclick="loadPostForEditing(${post.id})">Edit</button>
-                            `;
-                            postsList.appendChild(listItem);
-                        });
-                    })
-                    .catch(function (error) {
-                        console.error(error);
+                    posts.forEach(function (post) {
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <strong>${post.title}</strong><br>
+                            ${post.content}<br>
+                            <button onclick="loadPostForEditing(${post.id})">Edit</button>
+                            <button onclick="deletePost(${post.id})">Delete</button>
+                            <hr>
+                        `;
+                        postsList.appendChild(li);
                     });
-        }
+                })
+                .catch(function (error) {
+                    console.error(error);
+                });
+    }
 
-        function deletePost(id) {
-            if (confirm("정말 삭제하시겠습니까?")) {
-                axios.delete("/posts/" + id)
-                    .then(function (response) {
-                        console.log(response);
-                        loadPosts();
-                    })
-                    .catch(function (error) {
-                        console.error(error);
-                    });
-            }
-        }
-
+    function deletePost(id) {
+        axios.delete('/posts/' + id)
+            .then(function (response) {
+                console.log(response);
+                loadPosts(); // 목록 새로고침
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    }
 
         function loadPostForEditing(id) {
             axios.get('/posts/' + id)
