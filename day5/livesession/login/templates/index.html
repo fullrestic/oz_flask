@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>홈</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Flask 로그인 실습</h1>
+        {% if username %}
+            <p><strong>{{ username }}</strong>님, 환영합니다! 🎉</p>
+            {% if cookie_user %}
+                <p>🍪 쿠키: {{ cookie_user }} (10초 유지 중)</p>
+            {% else %}
+                <p>🍪 쿠키는 만료되었습니다.</p>
+            {% endif %}
+            <a href="/logout">로그아웃</a>
+        {% else %}
+            <p>로그인하지 않았습니다.</p>
+            <a href="/login">로그인하기</a>
+        {% endif %}
+    </div>
+</body>
+</html>

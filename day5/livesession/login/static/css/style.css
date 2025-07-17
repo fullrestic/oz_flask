@@ -1,0 +1,70 @@
+/* 공통 스타일 */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* 로그인 박스 스타일 */
+.login-box {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    margin: 100px auto;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box input[type="submit"] {
+    background-color: #74b9ff;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover {
+    background-color: #0984e3;
+}
+
+/* 홈 화면 박스 */
+.container {
+    background-color: white;
+    padding: 30px 40px;
+    max-width: 400px;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.container a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #55efc4;
+    color: #2d3436;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.container a:hover {
+    background-color: #00b894;
+    color: white;
+}

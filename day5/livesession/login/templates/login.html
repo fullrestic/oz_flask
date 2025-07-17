@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="login-box">
+        <h2>로그인</h2>
+        <form method="POST">
+            <input type="text" name="username" placeholder="이름을 입력하세요" required>
+            <input type="submit" value="로그인">
+        </form>
+    </div>
+</body>
+</html>
