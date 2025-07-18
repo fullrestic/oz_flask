@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <h1>Todo App에 오신 것을 환영합니다 📝</h1>
+
+    <p>이 앱은 JWT 인증 기반의 간단한 Todo API를 제공합니다.</p>
+
+    <h2>API 사용법 요약</h2>
+    <ul>
+        <li>POST /login → 로그인 (username, password로 access token 발급)</li>
+        <li>GET /todo → 본인의 Todo 목록 조회</li>
+        <li>POST /todo → 새로운 Todo 생성</li>
+        <li>PUT /todo/&lt;id&gt; → Todo 수정</li>
+        <li>DELETE /todo/&lt;id&gt; → Todo 삭제</li>
+    </ul>
+
+    <p>Swagger 문서에서 API를 테스트해보세요!</p>
+    <a href="/docs">👉 Swagger 문서 바로가기</a>
+</body>
+</html>
